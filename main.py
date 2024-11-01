@@ -1,16 +1,31 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+# Homeworck 10.2
+def first_word(text):
+    # заменяем запятые и точки на пробелы. после этого разбиваем на слова и записываем это в переменную word
+    word = text.replace("."," ").replace(",", " ").split()
+    return word[0]
+
+# Homeworck 10.3
+def is_even(digit):
+    if digit % 2 == 0: # если число делиться без остатка тогда возвращается True в остальных случаях False
+        return True
+    else:
+        return False
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+print("Homeworck 10.2")
+assert first_word("Hello world") == "Hello", 'Test1'
+assert first_word("greetings, friends") == "greetings", 'Test2'
+assert first_word("don't touch it") == "don't", 'Test3'
+assert first_word(".., and so on ...") == "and", 'Test4'
+assert first_word("hi") == "hi", 'Test5'
+assert first_word("Hello.World") == "Hello", 'Test6'
+print('OK')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print("Homeworck 10.3")
+
+assert is_even(2) == True, 'Test1'
+assert is_even(5) == False, 'Test2'
+assert is_even(0) == True, 'Test3'
+print('OK')
